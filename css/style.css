@@ -1,0 +1,143 @@
+html {
+  font-family: 'Noto Serif', serif;
+
+  text-align: center;
+
+  background-color: #000;
+}
+
+.title {
+  margin: 0;
+
+  font-size: 50px;
+  font-weight: 400;
+
+  letter-spacing: .18em;
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+.subtitle {
+  margin: 0 0 30px;
+
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+
+  color: #fff;
+}
+
+.current-key {
+  min-height: 119px;
+
+  font-size: 120px;
+  line-height: 1;
+
+  transition: all .07s ease;
+
+  color: #eee;
+  text-shadow: 0 0 5rem #028ae9;
+}
+
+.keys {
+  position: relative;
+
+  display: flex;
+
+  width: 100%;
+  max-width: 880px;
+  height: 350px;
+  margin: 40px auto 0;
+
+  cursor: none;
+}
+
+.key {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  box-sizing: border-box;
+  padding: 0;
+
+  transition: all .07s ease;
+
+  border: 4px solid #000;
+  border-radius: .5rem;
+  outline: none;
+}
+
+.key:not(.key--sharp) {
+  width: 10%;
+  height: 100%;
+
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.key--sharp {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+
+  width: 6%;
+  height: 60%;
+
+  color: #eee;
+  background-color: #000;
+}
+
+.key[data-key='87'] {
+  left: 7%;
+}
+
+.key[data-key='69'] {
+  left: 17%;
+}
+
+.key[data-key='84'] {
+  left: 37%;
+}
+
+.key[data-key='89'] {
+  left: 47%;
+}
+
+.key[data-key='85'] {
+  left: 57%;
+}
+
+.key[data-key='79'] {
+  left: 77%;
+}
+
+.key[data-key='80'] {
+  left: 87%;
+}
+
+.key--playing {
+  transform: scale(.95);
+
+  border-color: #028ae9;
+  box-shadow: 0 0 1rem #028ae9;
+}
+
+.key__hints {
+  position: absolute;
+  bottom: 7px;
+
+  display: block;
+
+  width: 100%;
+
+  font-size: 20px;
+
+  transition: opacity .3s ease-out;
+
+  opacity: 0;
+}
+
+.keys:hover .key__hints {
+  opacity: 1;
+}
