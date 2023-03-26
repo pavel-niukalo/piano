@@ -4,7 +4,7 @@
 
 Браузерная поддержка - Google Chrome, Mozilla Firefox.
 
-[Ссылка на проект](https://pavel-nyukalo.github.io/piano/)
+[Ссылка на проект](https://pavel-niukalo.github.io/piano/)
 
 ## Используемые технологии
 - HTML
