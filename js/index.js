@@ -1,12 +1,12 @@
 const keys = document.querySelectorAll('.key')
 const note = document.querySelector('.current-key')
 const hints = document.querySelectorAll('.key__hints')
-
+let repeatedKeys = false
 function playNote (evt) {
   const audio = document.querySelector(`audio[data-key='${evt.keyCode}']`)
   const key = document.querySelector(`.key[data-key='${evt.keyCode}']`)
 
-  if (!key) return;
+  if (!key || repeatedKeys) return;
 
   const keyNote = key.dataset.note
 
@@ -14,6 +14,7 @@ function playNote (evt) {
   note.textContent = keyNote
   audio.currentTime = 0
   audio.play()
+  repeatedKeys = true
 }
 
 function removeTransition (evt) {
@@ -28,3 +29,6 @@ hints.forEach((hint, index) => {
 keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
 document.addEventListener('keydown', playNote)
+document.addEventListener('keyup', ()=>{
+  repeatedKeys = false
+})
